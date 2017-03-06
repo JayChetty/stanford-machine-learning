@@ -18,8 +18,15 @@ for iter = 1:num_iters
     %
     predicted_values = X * theta;
     differences = predicted_values - y;
-    temp = (X' * differences)/m;
-    theta = theta - alpha*temp;
+    adjusted = difference * 
+    
+%     main = sum(differences) / m;
+%     gradients = X(:,2).* main
+%     theta = theta - gradients * alpha;
+
+
+
+
 
     % ============================================================
 
