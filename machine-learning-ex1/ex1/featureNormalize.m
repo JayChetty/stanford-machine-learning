@@ -25,6 +25,12 @@ sigma = zeros(1, size(X, 2));
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
+mu = mean(X);
+sigma = std(X);
+mean_adjusted = X - mu;
+X_norm = mean_adjusted ./ sigma;
+
+
 
 
 
