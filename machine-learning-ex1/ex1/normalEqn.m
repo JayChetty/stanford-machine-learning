@@ -12,8 +12,10 @@ theta = zeros(size(X, 2), 1);
 
 % ---------------------- Sample Solution ----------------------
 
+temp_one = pinv(X'*X);
+temp_two = X' * y;
 
-
+theta = temp_one * temp_two;
 
 % -------------------------------------------------------------
 
