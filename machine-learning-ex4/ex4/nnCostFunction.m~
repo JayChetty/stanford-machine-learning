@@ -61,11 +61,9 @@ totalled_costs = sum(costs, 2);
 J = sum(totalled_costs)/m;
 
 %Regularization
-Theta1_squared = Theta1(:, 2:end).^2;
-Theta2_squared = Theta2(:, 2:end).^2;
-% ( lambda/( 2 * m ) )
-% lambda
-regularization =    ( lambda / ( 2 * m ) ) * ( sum(sum(Theta1_squared)) + sum(sum(Theta2_squared)) );
+Theta1_squared = Theta1.^2;
+Theta2_squared = Theta2.^2;
+regularization =   ( sum(sum(Theta1_squared)) + sum(sum(Theta2_squared)) )
 
 J = J + regularization;
 %
