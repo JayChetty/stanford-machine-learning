@@ -22,26 +22,25 @@ size(X)
 size(theta)
 size(y)
 
-h = X * theta
+h = X * theta;
 
+errors = h - y;
+errors_squared = errors.^2;
 
+sum_squared_errors = sum( errors_squared );
 
-errors = h - y
-errors_squared = errors.^2
+cost  =  1/(2*m) * sum_squared_errors;
+reg = sum( theta( 2:end ).^2 ) * (lambda / (2*m));
 
-sum_squared_errors = sum( errors_squared )
-
-cost  =  1/(2*m) * sum_squared_errors
-
-reg = sum( theta( 2:end ).^2 ) * (lambda / (2*m))
-
-J = cost + reg
-
-
-
+J = cost + reg;
 
 % =========================================================================
 
-grad = grad(:);
+adjustment = (lambda/m) .* theta
+adjustment(1) = 0 %No adjustment for first
+
+grad =  ( X' * errors ) * (1/m) + adjustment
+
+grad = grad(:)
 
 end
