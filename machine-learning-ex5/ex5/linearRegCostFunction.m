@@ -17,10 +17,7 @@ grad = zeros(size(theta));
 %               regression for a particular choice of theta.
 %
 %               You should set J to the cost and grad to the gradient.
-%
-size(X)
-size(theta)
-size(y)
+% 
 
 h = X * theta;
 
@@ -36,11 +33,11 @@ J = cost + reg;
 
 % =========================================================================
 
-adjustment = (lambda/m) .* theta
-adjustment(1) = 0 %No adjustment for first
+adjustment = (lambda/m) .* theta;
+adjustment(1) = 0; %No adjustment for first
 
-grad =  ( X' * errors ) * (1/m) + adjustment
+grad =  ( X' * errors ) * (1/m) + adjustment;
 
-grad = grad(:)
+grad = grad(:);
 
 end

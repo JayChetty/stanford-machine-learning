@@ -52,21 +52,18 @@ error_val   = zeros(m, 1);
 %
 
 % ---------------------- Sample Solution ----------------------
-m
-Xval
-yval
 
 for i = 1:m
   trainX = X(1:i, :);
-  trainY = y(1:i)
+  trainY = y(1:i);
 
-  [theta] = trainLinearReg(trainX, trainY, lambda)
+  [theta] = trainLinearReg(trainX, trainY, lambda);
 
-  [error_train(i), grad] = linearRegCostFunction( X(1:i, :), y(1:i), theta, 0 )
-  % [error_val(i), grad] = linearRegCostFunction( X(Xval:end, :), y(yval:end), theta, 0 )
+  [error_train(i), grad] = linearRegCostFunction( X(1:i, :), y(1:i), theta, 0 );
+  [error_val(i), grad] = linearRegCostFunction( Xval , yval, theta, 0 );
 
   % error_train(i) = i
-  error_val(i) = 2 * i
+  % error_val(i) = 2 * i;
 end
 
 
